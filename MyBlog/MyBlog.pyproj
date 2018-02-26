@@ -40,6 +40,12 @@
     <Compile Include="blog\apps.py" />
     <Compile Include="blog\migrations\__init__.py" />
     <Compile Include="blog\models.py" />
+    <Compile Include="blog\templatetags\blog_tags.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="blog\templatetags\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="blog\tests.py" />
     <Compile Include="blog\urls.py">
       <SubType>Code</SubType>
@@ -64,6 +70,7 @@
     <Folder Include="app\templates\app\" />
     <Folder Include="blog\" />
     <Folder Include="blog\migrations\" />
+    <Folder Include="blog\templatetags\" />
     <Folder Include="blog\static\" />
     <Folder Include="blog\static\blog\" />
     <Folder Include="blog\static\blog\css\" />
