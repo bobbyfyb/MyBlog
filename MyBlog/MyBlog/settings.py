@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'comments',
     'blog',
     'app',
     # Add your apps here to enable them

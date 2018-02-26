@@ -9,6 +9,7 @@ import django.contrib.auth.views
 import app.forms
 import app.views
 import blog.urls
+import comments.urls
 
 # Uncomment the next lines to enable the admin:
 from django.conf.urls import include
@@ -39,6 +40,7 @@ urlpatterns = [
         },
         name='logout'),
     url(r'',include(blog.urls)),
+    url(r'',include('comments.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
