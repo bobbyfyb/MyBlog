@@ -26,7 +26,7 @@ SECRET_KEY = 'a3bbfa0b-15f7-41f3-8e46-4e9d3708e068'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','.artorias.site']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','.artorias.site','39.107.71.69']
 
 
 # Application definition
