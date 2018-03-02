@@ -65,6 +65,9 @@
     </Compile>
     <Compile Include="comments\views.py" />
     <Compile Include="comments\__init__.py" />
+    <Compile Include="fabfile.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="manage.py" />
     <Compile Include="MyBlog\__init__.py" />
     <Compile Include="MyBlog\settings.py" />
