@@ -50,6 +50,14 @@ class Post(models.Model):
     #文章作者，一篇文章只能有一个作者但是一个作者可以有多篇文章，类似Category
     author=models.ForeignKey(User)
 
+    #文章阅读量
+    views=models.PositiveIntegerField(default=0)
+
+    #增加文章阅读量
+    def increase_views(self):
+        self.views+=1
+        self.save(update_fields=['views'])
+
     def __str__(self):
         return self.title
 
@@ -58,3 +66,4 @@ class Post(models.Model):
 
     class Meta:
         ordering=['-created_time','title']
+
