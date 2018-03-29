@@ -3,8 +3,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
 
-import markdown
-from django.utils.html import strip_tags
 # Create your models here.
 class Category(models.Model):
     """
@@ -40,7 +38,7 @@ class Post(models.Model):
     modified_time=models.DateTimeField()
 
     #文章摘要，可以为空
-    excerpt=models.CharField(max_length=200,blank=True)
+    excert=models.CharField(max_length=200,blank=True)
 
     #文章的分类和标签，分类和标签定义如上
     #一篇文章只对应一个分类，但是一个分类下可以有多篇文章，故使用ForeignKey,即一对多关联关系
@@ -65,23 +63,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:detail',kwargs={'pk':self.pk})
-
-    #生成文章摘要
-    def save(self,*args,**kwargs):
-        #如果没有填写摘要 
-        if not self.excerpt:
-            md=markdown.Markdown(extensions=[
-                'markdown.extensions.extra',
-                'markdown.extensions.codehilite',
-                ])
-            #先将markdown文本渲染成html文本
-            #strip_tags去掉HTML文本的全部HTML标签
-            #从文本摘取前54个字符赋给excerpt
-            self.excerpt=strip_tags(md.convert(self.body))[:54]
-
-            #调用父类的save方法将数据保存到数据库中
-            super(Post,self).save(*args,**kwargs)
-            
 
     class Meta:
         ordering=['-created_time','title']
